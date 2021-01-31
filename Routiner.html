@@ -27,11 +27,7 @@
 <script>
 var myIndex = 0;
 var slider = document.getElementById("sliderval");
-var i;
-var x = document.getElementsByClassName("mySlides");
-for (i = 0; i < x.length; i++) {
-   x[i].style.display = "none";  
-}
+
 
 carousel();
 
@@ -40,6 +36,11 @@ function getRndInteger(min, max) {
 }
   
 function carousel() {
+var i;
+var x = document.getElementsByClassName("mySlides");
+for (i = 0; i < x.length; i++) {
+   x[i].style.display = "none";  
+}
   myIndex=getRndInteger(1,x.length);
   x[myIndex-1].style.display = "block";  
   setTimeout(carousel, slider.value); // Change image every x seconds
