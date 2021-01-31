@@ -17,13 +17,13 @@
 <h2 class="w3-center">Automatic Slideshow</h2>
 
   <div class="w3-content w3-section" style="max-width:250px">
-  <img class="mySlides" src="img_la.jpg" style="width:100%">
-  <img class="mySlides" src="img_ny.jpg" style="width:100%">
-  <img class="mySlides" src="img_chicago.jpg" style="width:100%">
+  <img class="TrebSlides" src="treb3pair.png" style="width:100%">
+  <img class="TrebSlides" src="treb2pair.png" style="width:100%">
+  <img class="TrebSlides" src="treb1pair.png" style="width:100%">
 <div class="w3-content w3-section" style="max-width:250px">
-  <img class="mySlides2" src="img_la.jpg" style="width:100%">
-  <img class="mySlides2" src="img_ny.jpg" style="width:100%">
-  <img class="mySlides2" src="img_chicago.jpg" style="width:100%">
+  <img class="BassSlides" src="bass3pair.png" style="width:100%">
+  <img class="BassSlides" src="bass2pair.png" style="width:100%">
+  <img class="BassSlides" src="bass1pair.png" style="width:100%">
 </div>
 <div class="slidecontainer">
   <input type="range" min="1000" max="5000" value="2000" class="slider" id="sliderval">
@@ -43,8 +43,8 @@ function getRndInteger(min, max) {
   
 function carousel() {
 var i;
-var x1 = document.getElementsByClassName("mySlides");
-var x2 = document.getElementsByClassName("mySlides2");
+var x1 = document.getElementsByClassName("TrebSlides");
+var x2 = document.getElementsByClassName("BassSlides");
 for (i = 0; i < x1.length; i++) {
    x1[i].style.display = "none";  
    x2[i].style.display = "none";  
@@ -56,6 +56,6 @@ for (i = 0; i < x1.length; i++) {
   setTimeout(carousel, slider.value); // Change image every x seconds
 }
 </script> 
-1.15
+1.16
 </body>
 </html>
