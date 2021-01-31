@@ -37,8 +37,12 @@ var slider = document.getElementById("sliderval");
 
 carousel();
 
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max + 1 - min) ) + min;
+function getRndInteger(min, max, prevr) {
+  var r;
+  do {
+   r= Math.floor(Math.random() * (max + 1 - min) ) + min;
+  } while (r == prevr);
+  return r;
 }
   
 function carousel() {
@@ -49,13 +53,13 @@ for (i = 0; i < x1.length; i++) {
    x1[i].style.display = "none";  
    x2[i].style.display = "none";  
 }
-  myIndex1=getRndInteger(1,x1.length);
-  myIndex2=getRndInteger(1,x2.length);
+  myIndex1=getRndInteger(1,x1.length, myIndex1);
+  myIndex2=getRndInteger(1,x2.length, myIndex2);
   x1[myIndex1-1].style.display = "block";  
   x2[myIndex2-1].style.display = "block";  
   setTimeout(carousel, slider.value); // Change image every x seconds
 }
 </script> 
-1.16
+1.17
 </body>
 </html>
