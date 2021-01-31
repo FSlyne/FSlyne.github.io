@@ -21,11 +21,12 @@
   <img class="mySlides" src="img_chicago.jpg" style="width:100%">
 </div>
 <div class="slidecontainer">
-  <input type="range" min="1000" max="5000" value="500" class="slider" id="myRange">
+  <input type="range" min="1000" max="5000" value="500" class="slider" id="sliderval">
 </div>
 
 <script>
 var myIndex = 0;
+var slider = document.getElementById("sliderval");
 carousel();
 
 function carousel() {
@@ -37,7 +38,7 @@ function carousel() {
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 2000); // Change image every 2 seconds
+  setTimeout(carousel, slider); // Change image every 2 seconds
 }
 </script> 
 
