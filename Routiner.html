@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 .mySlides {display:none;}
+.mySlides2 {display:none;}
 </style>
 </head>
 
@@ -19,6 +20,11 @@
   <img class="mySlides" src="img_la.jpg" style="width:100%">
   <img class="mySlides" src="img_ny.jpg" style="width:100%">
   <img class="mySlides" src="img_chicago.jpg" style="width:100%">
+</div>
+<div class="w3-content w3-section" style="max-width:500px">
+<img class="mySlides2" src="img_la.jpg" style="width:100%">
+<img class="mySlides2" src="img_ny.jpg" style="width:100%">
+<img class="mySlides2" src="img_chicago.jpg" style="width:100%">
 </div>
 <div class="slidecontainer">
   <input type="range" min="1000" max="5000" value="2000" class="slider" id="sliderval">
@@ -37,13 +43,13 @@ function getRndInteger(min, max) {
   
 function carousel() {
 var i;
-var x = document.getElementsByClassName("mySlides");
-for (i = 0; i < x.length; i++) {
-   x[i].style.display = "none";  
+var x1 = document.getElementsByClassName("mySlides");
+for (i = 0; i < x1.length; i++) {
+   x1[i].style.display = "none";  
 }
-  myIndex=getRndInteger(1,x.length);
-  x[myIndex-1].style.display = "block";  
-  x[myIndex-1].style.display = "block";  
+  myIndex=getRndInteger(1,x1.length);
+  x1[myIndex-1].style.display = "block";  
+  x1[myIndex-1].style.display = "block";  
   setTimeout(carousel, slider.value); // Change image every x seconds
 }
 </script> 
