@@ -44,15 +44,17 @@ function getRndInteger(min, max) {
 function carousel() {
 var i;
 var x1 = document.getElementsByClassName("mySlides");
+var x2 = document.getElementsByClassName("mySlides2");
 for (i = 0; i < x1.length; i++) {
    x1[i].style.display = "none";  
+   x2[i].style.display = "none";  
 }
   myIndex=getRndInteger(1,x1.length);
   x1[myIndex-1].style.display = "block";  
-  x1[myIndex-1].style.display = "block";  
+  x2[myIndex-1].style.display = "block";  
   setTimeout(carousel, slider.value); // Change image every x seconds
 }
 </script> 
-1.4
+1.5
 </body>
 </html>
