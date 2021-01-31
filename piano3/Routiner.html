@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Routiner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.TrebSlides {display:none;}
+.BassSlides2 {display:none;}
+</style>
+</head>
+
+<body>
+
+<h2 class="w3-center">Piano Routiner 1</h2>
+
+  <div class="w3-content w3-section" style="max-width:250px">
+  <img class="TrebSlides" src="treb2trip.png" style="width:50%">
+  <img class="TrebSlides" src="treb1trip.png" style="width:50%">
+  <img class="TrebSlides" src="treb3pair.png" style="width:50%">
+  <img class="TrebSlides" src="treb2pair.png" style="width:50%">
+  <img class="TrebSlides" src="treb1pair.png" style="width:50%">
+<div class="w3-content w3-section" style="max-width:250px">
+  <img class="BassSlides" src="bass2trip.png" style="width:50%">
+  <img class="BassSlides" src="bass1trip.png" style="width:50%">
+  <img class="BassSlides" src="bass3pair.png" style="width:50%">
+  <img class="BassSlides" src="bass2pair.png" style="width:50%">
+  <img class="BassSlides" src="bass1pair.png" style="width:50%">
+</div>
+<div class="slidecontainer">
+  <input type="range" min="1000" max="5000" value="2000" class="slider" id="sliderval">
+</div>
+
+<script>
+var myIndex1 = 0;
+var myIndex2 = 0;
+var slider = document.getElementById("sliderval");
+
+
+carousel();
+
+function getRndInteger(min, max, prevr) {
+  var r;
+  do {
+   r= Math.floor(Math.random() * (max + 1 - min) ) + min;
+  } while (r == prevr);
+  return r;
+}
+  
+function carousel() {
+var i;
+var x1 = document.getElementsByClassName("TrebSlides");
+var x2 = document.getElementsByClassName("BassSlides");
+for (i = 0; i < x1.length; i++) {
+   x1[i].style.display = "none";  
+   x2[i].style.display = "none";  
+}
+  myIndex1=getRndInteger(1,x1.length, myIndex1);
+  myIndex2=getRndInteger(1,x2.length, myIndex2);
+  x1[myIndex1-1].style.display = "block";  
+  x2[myIndex2-1].style.display = "block";  
+  setTimeout(carousel, slider.value); // Change image every x seconds
+}
+</script> 
+1.19
+</body>
+</html>
